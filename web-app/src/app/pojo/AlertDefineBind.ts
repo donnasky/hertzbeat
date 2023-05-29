@@ -1,4 +1,4 @@
-import { Monitor } from './Monitor';
+import {Monitor} from './Monitor';
 
 export class AlertDefineBind {
   id!: number;

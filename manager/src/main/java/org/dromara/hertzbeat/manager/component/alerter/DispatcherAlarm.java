@@ -18,13 +18,13 @@
 package org.dromara.hertzbeat.manager.component.alerter;
 
 import com.google.common.collect.Maps;
-import org.dromara.hertzbeat.common.queue.CommonDataQueue;
+import lombok.extern.slf4j.Slf4j;
 import org.dromara.hertzbeat.alert.AlerterWorkerPool;
 import org.dromara.hertzbeat.common.entity.alerter.Alert;
 import org.dromara.hertzbeat.common.entity.manager.NoticeReceiver;
+import org.dromara.hertzbeat.common.queue.CommonDataQueue;
 import org.dromara.hertzbeat.manager.service.NoticeConfigService;
 import org.dromara.hertzbeat.manager.support.exception.AlertNoticeException;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
 

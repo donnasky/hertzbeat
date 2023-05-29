@@ -1,5 +1,5 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import { Modal, Button } from '@douyinfe/semi-ui';
+import React, {useCallback, useEffect, useState} from 'react';
+import {Button, Modal} from '@douyinfe/semi-ui';
 import Translate from '@docusaurus/Translate';
 import styles from './DiaLog.module.css';
 

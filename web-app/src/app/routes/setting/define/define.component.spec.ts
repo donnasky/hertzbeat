@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { DefineComponent } from './define.component';
+import {DefineComponent} from './define.component';
 
 describe('DefineComponent', () => {
   let component: DefineComponent;

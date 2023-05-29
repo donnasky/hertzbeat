@@ -1,10 +1,10 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import {HttpClient, HttpParams} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
 
-import { Message } from '../pojo/Message';
-import { Page } from '../pojo/Page';
-import { Tag } from '../pojo/Tag';
+import {Message} from '../pojo/Message';
+import {Page} from '../pojo/Page';
+import {Tag} from '../pojo/Tag';
 
 const tag_uri = '/tag';
 

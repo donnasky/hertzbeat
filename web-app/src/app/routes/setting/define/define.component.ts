@@ -1,13 +1,13 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { I18NService, StartupService } from '@core';
-import { ALAIN_I18N_TOKEN } from '@delon/theme';
-import { NzConfigService } from 'ng-zorro-antd/core/config';
-import { NzModalService } from 'ng-zorro-antd/modal';
-import { NzNotificationService } from 'ng-zorro-antd/notification';
-import { finalize } from 'rxjs/operators';
+import {Component, Inject, OnInit} from '@angular/core';
+import {ActivatedRoute, ParamMap, Router} from '@angular/router';
+import {I18NService, StartupService} from '@core';
+import {ALAIN_I18N_TOKEN} from '@delon/theme';
+import {NzConfigService} from 'ng-zorro-antd/core/config';
+import {NzModalService} from 'ng-zorro-antd/modal';
+import {NzNotificationService} from 'ng-zorro-antd/notification';
+import {finalize} from 'rxjs/operators';
 
-import { AppDefineService } from '../../../service/app-define.service';
+import {AppDefineService} from '../../../service/app-define.service';
 
 @Component({
   selector: 'app-define',

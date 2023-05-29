@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { NoticeReceiverMailService } from './notice-receiver.service';
+import {NoticeReceiverMailService} from './notice-receiver.service';
 
 describe('NoticeReceiverService', () => {
   let service: NoticeReceiverMailService;

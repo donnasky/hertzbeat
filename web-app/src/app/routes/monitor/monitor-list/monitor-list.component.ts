@@ -1,18 +1,18 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { I18NService } from '@core';
-import { ALAIN_I18N_TOKEN } from '@delon/theme';
-import { NzMessageService } from 'ng-zorro-antd/message';
-import { NzModalService } from 'ng-zorro-antd/modal';
-import { ModalButtonOptions } from 'ng-zorro-antd/modal/modal-types';
-import { NzNotificationService } from 'ng-zorro-antd/notification';
-import { NzTableQueryParams } from 'ng-zorro-antd/table';
-import { NzUploadChangeParam } from 'ng-zorro-antd/upload';
-import { finalize } from 'rxjs/operators';
-
-import { Message } from '../../../pojo/Message';
-import { Monitor } from '../../../pojo/Monitor';
-import { MonitorService } from '../../../service/monitor.service';
+import {Component, Inject, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {I18NService} from '@core';
+import {ALAIN_I18N_TOKEN} from '@delon/theme';
+import {NzMessageService} from 'ng-zorro-antd/message';
+import {NzModalService} from 'ng-zorro-antd/modal';
+import {ModalButtonOptions} from 'ng-zorro-antd/modal/modal-types';
+import {NzNotificationService} from 'ng-zorro-antd/notification';
+import {NzTableQueryParams} from 'ng-zorro-antd/table';
+import {NzUploadChangeParam} from 'ng-zorro-antd/upload';
+import {finalize} from 'rxjs/operators';
+import {Monitor} from '../../../pojo/Monitor';
+import {MonitorService} from '../../../service/monitor.service';
+import {CollectorService} from "../../../service/collector.service";
+import {Collector} from "../../../pojo/Collector";
 
 @Component({
   selector: 'app-monitor-list',
@@ -28,6 +28,7 @@ export class MonitorListComponent implements OnInit {
     private msg: NzMessageService,
     private monitorSvc: MonitorService,
     private messageSvc: NzMessageService,
+    private CollectorSvc: CollectorService,
     @Inject(ALAIN_I18N_TOKEN) private i18nSvc: I18NService
   ) {}
 
@@ -37,11 +38,13 @@ export class MonitorListComponent implements OnInit {
   total: number = 0;
   monitors!: Monitor[];
   tableLoading: boolean = true;
+  collectorId: number = 0;
   checkedMonitorIds = new Set<number>();
   isSwitchExportTypeModalVisible = false;
   exportJsonButtonLoading = false;
   exportYamlButtonLoading = false;
   exportExcelButtonLoading = false;
+  collectors!: Collector[];
   // 过滤搜索
   filterContent!: string;
   filterStatus: number = 9;
@@ -62,6 +65,23 @@ export class MonitorListComponent implements OnInit {
       this.tableLoading = true;
       this.loadMonitorTable();
     });
+  }
+
+  loadCollectors() {
+    let collectorInit$ = this.CollectorSvc.loadCollectors(undefined, 0, 100).subscribe(
+      message => {
+        if (message.code === 0) {
+          this.collectors = message.data.content;
+        } else {
+          console.warn(message.msg);
+        }
+        collectorInit$.unsubscribe();
+      },
+      error => {
+        console.error(error.msg);
+        collectorInit$.unsubscribe();
+      }
+    );
   }
 
   onFilterSearchMonitors() {
@@ -96,8 +116,9 @@ export class MonitorListComponent implements OnInit {
   }
 
   loadMonitorTable(sortField?: string | null, sortOrder?: string | null) {
+    this.loadCollectors();
     this.tableLoading = true;
-    let monitorInit$ = this.monitorSvc.getMonitors(this.app, this.pageIndex - 1, this.pageSize, sortField, sortOrder).subscribe(
+    let monitorInit$ = this.monitorSvc.getMonitors(this.app, this.pageIndex - 1, this.pageSize,this.collectorId, sortField, sortOrder).subscribe(
       message => {
         this.tableLoading = false;
         this.checkedAll = false;
@@ -105,6 +126,20 @@ export class MonitorListComponent implements OnInit {
         if (message.code === 0) {
           let page = message.data;
           this.monitors = page.content;
+
+          this.monitors.forEach(monitor =>{
+
+            this.collectors.forEach(collector =>{
+
+              if(collector.id == monitor.collectorId)
+              {
+                monitor.collectorName=collector.name;
+              }
+
+            });
+
+          });
+
           this.pageIndex = page.number + 1;
           this.total = page.totalElements;
         } else {

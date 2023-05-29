@@ -1,9 +1,9 @@
-import { Platform } from '@angular/cdk/platform';
-import { registerLocaleData } from '@angular/common';
+import {Platform} from '@angular/cdk/platform';
+import {registerLocaleData} from '@angular/common';
 import ngEn from '@angular/common/locales/en';
 import ngZh from '@angular/common/locales/zh';
 import ngZhTw from '@angular/common/locales/zh-Hant';
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {
   _HttpClient,
   AlainI18nBaseService,
@@ -13,14 +13,19 @@ import {
   zh_CN as delonZhCn,
   zh_TW as delonZhTw
 } from '@delon/theme';
-import { AlainConfigService } from '@delon/util/config';
-import { enUS as dfEn, zhCN as dfZhCn, zhTW as dfZhTw } from 'date-fns/locale';
-import { NzSafeAny } from 'ng-zorro-antd/core/types';
-import { en_US as zorroEnUS, NzI18nService, zh_CN as zorroZhCN, zh_TW as zorroZhTW } from 'ng-zorro-antd/i18n';
-import { Observable, zip } from 'rxjs';
-import { map } from 'rxjs/operators';
+import {AlainConfigService} from '@delon/util/config';
+import {enUS as dfEn, zhCN as dfZhCn, zhTW as dfZhTw} from 'date-fns/locale';
+import {NzSafeAny} from 'ng-zorro-antd/core/types';
+import {
+  en_US as zorroEnUS,
+  NzI18nService,
+  zh_CN as zorroZhCN,
+  zh_TW as zorroZhTW
+} from 'ng-zorro-antd/i18n';
+import {Observable, zip} from 'rxjs';
+import {map} from 'rxjs/operators';
 
-import { Message } from '../../pojo/Message';
+import {Message} from '../../pojo/Message';
 
 interface LangConfigData {
   abbr: string;

@@ -17,9 +17,9 @@
 
 package org.dromara.hertzbeat.warehouse.store;
 
+import lombok.extern.slf4j.Slf4j;
 import org.dromara.hertzbeat.common.entity.dto.Value;
 import org.dromara.hertzbeat.common.entity.message.CollectRep;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.DisposableBean;
 
 import java.util.List;

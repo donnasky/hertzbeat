@@ -2,6 +2,7 @@ package org.dromara.hertzbeat.manager.service;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
+import org.assertj.core.util.Maps;
 import org.dromara.hertzbeat.common.entity.alerter.Alert;
 import org.dromara.hertzbeat.common.entity.manager.NoticeReceiver;
 import org.dromara.hertzbeat.common.entity.manager.NoticeRule;
@@ -10,7 +11,6 @@ import org.dromara.hertzbeat.manager.component.alerter.DispatcherAlarm;
 import org.dromara.hertzbeat.manager.dao.NoticeReceiverDao;
 import org.dromara.hertzbeat.manager.dao.NoticeRuleDao;
 import org.dromara.hertzbeat.manager.service.impl.NoticeConfigServiceImpl;
-import org.assertj.core.util.Maps;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -25,10 +25,7 @@ import java.util.Set;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.lenient;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.*;
 
 /**
  * Test case for {@link NoticeConfigService}

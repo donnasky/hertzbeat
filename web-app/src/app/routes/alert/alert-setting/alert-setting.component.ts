@@ -1,20 +1,20 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { I18NService } from '@core';
-import { ALAIN_I18N_TOKEN, SettingsService } from '@delon/theme';
-import { NzModalService } from 'ng-zorro-antd/modal';
-import { NzNotificationService } from 'ng-zorro-antd/notification';
-import { NzTableQueryParams } from 'ng-zorro-antd/table';
-import { TransferChange, TransferItem } from 'ng-zorro-antd/transfer';
-import { zip } from 'rxjs';
-import { finalize, map } from 'rxjs/operators';
+import {Component, Inject, OnInit} from '@angular/core';
+import {I18NService} from '@core';
+import {ALAIN_I18N_TOKEN, SettingsService} from '@delon/theme';
+import {NzModalService} from 'ng-zorro-antd/modal';
+import {NzNotificationService} from 'ng-zorro-antd/notification';
+import {NzTableQueryParams} from 'ng-zorro-antd/table';
+import {TransferChange, TransferItem} from 'ng-zorro-antd/transfer';
+import {zip} from 'rxjs';
+import {finalize, map} from 'rxjs/operators';
 
-import { AlertDefine } from '../../../pojo/AlertDefine';
-import { AlertDefineBind } from '../../../pojo/AlertDefineBind';
-import { Message } from '../../../pojo/Message';
-import { Monitor } from '../../../pojo/Monitor';
-import { AlertDefineService } from '../../../service/alert-define.service';
-import { AppDefineService } from '../../../service/app-define.service';
-import { MonitorService } from '../../../service/monitor.service';
+import {AlertDefine} from '../../../pojo/AlertDefine';
+import {AlertDefineBind} from '../../../pojo/AlertDefineBind';
+import {Message} from '../../../pojo/Message';
+import {Monitor} from '../../../pojo/Monitor';
+import {AlertDefineService} from '../../../service/alert-define.service';
+import {AppDefineService} from '../../../service/app-define.service';
+import {MonitorService} from '../../../service/monitor.service';
 
 const AVAILABILITY = 'availability';
 

@@ -83,7 +83,7 @@ excludedResource:
   - /v3/api-docs===get
   # h2 database
   - /h2-console/**===*
-
+  - /api/collector/getConfig===get
 # 用户账户信息
 # 下面有 admin tom lili 三个账户
 # eg: admin 拥有[admin,user]角色,密码为hertzbeat

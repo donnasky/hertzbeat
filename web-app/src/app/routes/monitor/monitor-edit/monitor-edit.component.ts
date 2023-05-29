@@ -1,20 +1,22 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { I18NService } from '@core';
-import { ALAIN_I18N_TOKEN, TitleService } from '@delon/theme';
-import { NzNotificationService } from 'ng-zorro-antd/notification';
-import { throwError } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import {Component, Inject, OnInit} from '@angular/core';
+import {FormGroup} from '@angular/forms';
+import {ActivatedRoute, ParamMap, Router} from '@angular/router';
+import {I18NService} from '@core';
+import {ALAIN_I18N_TOKEN, TitleService} from '@delon/theme';
+import {NzNotificationService} from 'ng-zorro-antd/notification';
+import {throwError} from 'rxjs';
+import {switchMap} from 'rxjs/operators';
 
-import { Message } from '../../../pojo/Message';
-import { Monitor } from '../../../pojo/Monitor';
-import { Param } from '../../../pojo/Param';
-import { ParamDefine } from '../../../pojo/ParamDefine';
-import { Tag } from '../../../pojo/Tag';
-import { AppDefineService } from '../../../service/app-define.service';
-import { MonitorService } from '../../../service/monitor.service';
-import { TagService } from '../../../service/tag.service';
+import {Message} from '../../../pojo/Message';
+import {Monitor} from '../../../pojo/Monitor';
+import {Param} from '../../../pojo/Param';
+import {ParamDefine} from '../../../pojo/ParamDefine';
+import {Tag} from '../../../pojo/Tag';
+import {AppDefineService} from '../../../service/app-define.service';
+import {MonitorService} from '../../../service/monitor.service';
+import {TagService} from '../../../service/tag.service';
+import {Collector} from "../../../pojo/Collector";
+import {CollectorService} from "../../../service/collector.service";
 
 @Component({
   selector: 'app-monitor-modify',
@@ -30,6 +32,7 @@ export class MonitorEditComponent implements OnInit {
     private titleSvc: TitleService,
     private notifySvc: NzNotificationService,
     private tagSvc: TagService,
+    private CollectorSvc: CollectorService,
     @Inject(ALAIN_I18N_TOKEN) private i18nSvc: I18NService
   ) {}
 
@@ -44,6 +47,8 @@ export class MonitorEditComponent implements OnInit {
   detected: boolean = true;
   passwordVisible: boolean = false;
   isSpinning: boolean = false;
+  collectors!: Collector[];
+  collectorsOption: any[] = [];
   spinningTip: string = 'Loading...';
 
   ngOnInit(): void {
@@ -131,6 +136,31 @@ export class MonitorEditComponent implements OnInit {
       });
   }
 
+  loadCollectorsOption() {
+    let collectorInit$ = this.CollectorSvc.loadCollectors(undefined, 0, 100).subscribe(
+      message => {
+        if (message.code === 0) {
+          this.collectors = message.data.content;
+          this.collectorsOption = [];
+          this.collectors.forEach(item => {
+
+            this.collectorsOption.push({
+              value: item.id,
+              label: item.name
+            });
+          });
+
+        } else {
+          console.warn(message.msg);
+        }
+        collectorInit$.unsubscribe();
+      },
+      error => {
+        console.error(error.msg);
+        collectorInit$.unsubscribe();
+      }
+    );
+  }
   onParamBooleanChanged(booleanValue: boolean, field: string) {
     // 对SSL的端口联动处理, 不开启SSL默认80端口，开启SSL默认443
     if (field === 'ssl') {

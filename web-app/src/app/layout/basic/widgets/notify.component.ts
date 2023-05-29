@@ -1,13 +1,19 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { I18NService } from '@core';
-import { NoticeItem } from '@delon/abc/notice-icon';
-import { ALAIN_I18N_TOKEN } from '@delon/theme';
-import { NzI18nService } from 'ng-zorro-antd/i18n';
-import { NzMessageService } from 'ng-zorro-antd/message';
-import { finalize } from 'rxjs/operators';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  Inject,
+  OnInit
+} from '@angular/core';
+import {Router} from '@angular/router';
+import {I18NService} from '@core';
+import {NoticeItem} from '@delon/abc/notice-icon';
+import {ALAIN_I18N_TOKEN} from '@delon/theme';
+import {NzI18nService} from 'ng-zorro-antd/i18n';
+import {NzMessageService} from 'ng-zorro-antd/message';
+import {finalize} from 'rxjs/operators';
 
-import { AlertService } from '../../../service/alert.service';
+import {AlertService} from '../../../service/alert.service';
 
 @Component({
   selector: 'header-notify',

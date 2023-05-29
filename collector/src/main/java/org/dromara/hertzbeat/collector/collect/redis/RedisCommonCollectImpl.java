@@ -1,18 +1,5 @@
 package org.dromara.hertzbeat.collector.collect.redis;
 
-import org.dromara.hertzbeat.collector.collect.AbstractCollect;
-import org.dromara.hertzbeat.collector.collect.common.cache.CacheIdentifier;
-import org.dromara.hertzbeat.collector.collect.common.cache.CommonCache;
-import org.dromara.hertzbeat.collector.collect.common.cache.RedisConnect;
-import org.dromara.hertzbeat.collector.dispatch.DispatchConstants;
-import org.dromara.hertzbeat.collector.util.CollectUtil;
-import org.dromara.hertzbeat.common.entity.job.Metrics;
-import org.dromara.hertzbeat.common.entity.job.protocol.RedisProtocol;
-import org.dromara.hertzbeat.common.entity.message.CollectRep;
-import org.dromara.hertzbeat.common.constants.CommonConstants;
-import org.dromara.hertzbeat.common.util.CommonUtil;
-import org.dromara.hertzbeat.common.util.MapCapUtil;
-import org.dromara.hertzbeat.common.constants.SignConstants;
 import io.lettuce.core.RedisClient;
 import io.lettuce.core.RedisConnectionException;
 import io.lettuce.core.RedisURI;
@@ -25,6 +12,19 @@ import io.lettuce.core.cluster.models.partitions.RedisClusterNode;
 import io.lettuce.core.resource.ClientResources;
 import io.lettuce.core.resource.DefaultClientResources;
 import lombok.extern.slf4j.Slf4j;
+import org.dromara.hertzbeat.collector.collect.AbstractCollect;
+import org.dromara.hertzbeat.collector.collect.common.cache.CacheIdentifier;
+import org.dromara.hertzbeat.collector.collect.common.cache.CommonCache;
+import org.dromara.hertzbeat.collector.collect.common.cache.RedisConnect;
+import org.dromara.hertzbeat.collector.dispatch.DispatchConstants;
+import org.dromara.hertzbeat.collector.util.CollectUtil;
+import org.dromara.hertzbeat.common.constants.CommonConstants;
+import org.dromara.hertzbeat.common.constants.SignConstants;
+import org.dromara.hertzbeat.common.entity.job.Metrics;
+import org.dromara.hertzbeat.common.entity.job.protocol.RedisProtocol;
+import org.dromara.hertzbeat.common.entity.message.CollectRep;
+import org.dromara.hertzbeat.common.util.CommonUtil;
+import org.dromara.hertzbeat.common.util.MapCapUtil;
 import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;
 

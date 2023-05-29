@@ -17,8 +17,8 @@
 
 package org.dromara.hertzbeat.common.util;
 
-import org.dromara.hertzbeat.common.support.ResourceBundleUtf8Control;
 import lombok.extern.slf4j.Slf4j;
+import org.dromara.hertzbeat.common.support.ResourceBundleUtf8Control;
 
 import java.util.Locale;
 import java.util.MissingResourceException;

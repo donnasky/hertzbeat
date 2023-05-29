@@ -17,31 +17,29 @@
 
 package org.dromara.hertzbeat.collector.collect.mongodb;
 
+import com.mongodb.MongoServerUnavailableException;
+import com.mongodb.MongoTimeoutException;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoDatabase;
+import lombok.extern.slf4j.Slf4j;
+import org.bson.Document;
+import org.dromara.hertzbeat.collector.collect.AbstractCollect;
+import org.dromara.hertzbeat.collector.collect.common.cache.CacheIdentifier;
+import org.dromara.hertzbeat.collector.collect.common.cache.CommonCache;
+import org.dromara.hertzbeat.collector.collect.common.cache.MongodbConnect;
+import org.dromara.hertzbeat.collector.dispatch.DispatchConstants;
+import org.dromara.hertzbeat.common.constants.CommonConstants;
+import org.dromara.hertzbeat.common.entity.job.Metrics;
+import org.dromara.hertzbeat.common.entity.job.protocol.MongodbProtocol;
+import org.dromara.hertzbeat.common.entity.message.CollectRep;
+import org.dromara.hertzbeat.common.util.CommonUtil;
+import org.springframework.util.Assert;
+
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.Arrays;
 import java.util.Optional;
-
-import com.mongodb.MongoServerUnavailableException;
-import com.mongodb.MongoTimeoutException;
-import org.dromara.hertzbeat.collector.collect.common.cache.CacheIdentifier;
-import org.dromara.hertzbeat.collector.collect.common.cache.CommonCache;
-import org.dromara.hertzbeat.collector.collect.common.cache.MongodbConnect;
-import org.dromara.hertzbeat.common.util.CommonUtil;
-import org.dromara.hertzbeat.collector.dispatch.DispatchConstants;
-import org.dromara.hertzbeat.common.entity.job.Metrics;
-import org.dromara.hertzbeat.common.entity.job.protocol.MongodbProtocol;
-import org.dromara.hertzbeat.common.entity.message.CollectRep;
-import org.dromara.hertzbeat.common.constants.CommonConstants;
-import org.bson.Document;
-import org.springframework.util.Assert;
-
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoDatabase;
-import org.dromara.hertzbeat.collector.collect.AbstractCollect;
-
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * Mongodb 单机指标收集器

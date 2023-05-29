@@ -1,4 +1,4 @@
-import { MockRequest } from '@delon/mock';
+import {MockRequest} from '@delon/mock';
 
 const list: any[] = [];
 const total = 50;

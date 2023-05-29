@@ -17,12 +17,12 @@
 
 package org.dromara.hertzbeat.common.entity.manager;
 
-import org.dromara.hertzbeat.common.entity.alerter.JsonMapAttributeConverter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.dromara.hertzbeat.common.entity.alerter.JsonMapAttributeConverter;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;

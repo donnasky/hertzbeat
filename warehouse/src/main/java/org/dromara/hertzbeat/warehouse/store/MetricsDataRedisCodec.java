@@ -17,9 +17,9 @@
 
 package org.dromara.hertzbeat.warehouse.store;
 
-import org.dromara.hertzbeat.common.entity.message.CollectRep;
 import io.lettuce.core.codec.RedisCodec;
 import lombok.extern.slf4j.Slf4j;
+import org.dromara.hertzbeat.common.entity.message.CollectRep;
 
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;

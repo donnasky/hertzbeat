@@ -1,11 +1,17 @@
-import { Inject, Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { I18NService } from '@core';
-import { ALAIN_I18N_TOKEN } from '@delon/theme';
-import { NzNotificationService } from 'ng-zorro-antd/notification';
-import { Observable } from 'rxjs';
+import {Inject, Injectable} from '@angular/core';
+import {
+  ActivatedRouteSnapshot,
+  CanActivate,
+  Router,
+  RouterStateSnapshot,
+  UrlTree
+} from '@angular/router';
+import {I18NService} from '@core';
+import {ALAIN_I18N_TOKEN} from '@delon/theme';
+import {NzNotificationService} from 'ng-zorro-antd/notification';
+import {Observable} from 'rxjs';
 
-import { LocalStorageService } from '../../service/local-storage.service';
+import {LocalStorageService} from '../../service/local-storage.service';
 
 @Injectable({
   providedIn: 'root'

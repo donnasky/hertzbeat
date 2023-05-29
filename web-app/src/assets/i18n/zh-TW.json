@@ -36,6 +36,7 @@
     "extras": {
       "": "更多",
       "tags": "標簽管理",
+      "collectors": "採集程式管理",
       "define": "監控模版",
       "help": "幫助中心",
       "setting": "設置",
@@ -47,6 +48,8 @@
     "": "監控",
     "availability": "監控可用性",
     "name": "監控名稱",
+    "collectorId": "采集程序",
+    "collectorName": "采集程序",
     "name.tip": "標識監控的名稱,名稱需要保證唯一性",
     "host": "監控Host",
     "host.tip": "被監控的對端IP或域名",

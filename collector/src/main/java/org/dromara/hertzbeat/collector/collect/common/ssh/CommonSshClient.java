@@ -5,12 +5,15 @@ import org.apache.sshd.client.SshClient;
 import org.apache.sshd.client.keyverifier.AcceptAllServerKeyVerifier;
 import org.apache.sshd.common.PropertyResolverUtils;
 import org.apache.sshd.core.CoreModuleProperties;
+import org.springframework.stereotype.Service;
+
 
 /**
  * ssh公共client
  * @author tom
  *
  */
+@Service
 @Slf4j
 public class CommonSshClient {
 

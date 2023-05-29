@@ -22,20 +22,20 @@ import com.googlecode.aviator.Expression;
 import com.googlecode.aviator.exception.CompileExpressionErrorException;
 import com.googlecode.aviator.exception.ExpressionRuntimeException;
 import com.googlecode.aviator.exception.ExpressionSyntaxErrorException;
+import lombok.extern.slf4j.Slf4j;
 import org.dromara.hertzbeat.alert.AlerterProperties;
 import org.dromara.hertzbeat.alert.AlerterWorkerPool;
-import org.dromara.hertzbeat.common.queue.CommonDataQueue;
 import org.dromara.hertzbeat.alert.dao.AlertMonitorDao;
-import org.dromara.hertzbeat.common.entity.alerter.Alert;
-import org.dromara.hertzbeat.common.entity.alerter.AlertDefine;
 import org.dromara.hertzbeat.alert.service.AlertDefineService;
 import org.dromara.hertzbeat.alert.util.AlertTemplateUtil;
+import org.dromara.hertzbeat.common.constants.CommonConstants;
+import org.dromara.hertzbeat.common.entity.alerter.Alert;
+import org.dromara.hertzbeat.common.entity.alerter.AlertDefine;
 import org.dromara.hertzbeat.common.entity.manager.Monitor;
 import org.dromara.hertzbeat.common.entity.message.CollectRep;
-import org.dromara.hertzbeat.common.constants.CommonConstants;
+import org.dromara.hertzbeat.common.queue.CommonDataQueue;
 import org.dromara.hertzbeat.common.util.CommonUtil;
 import org.dromara.hertzbeat.common.util.ResourceBundleUtil;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.*;
@@ -98,6 +98,7 @@ public class CalculateAlarm {
                     CollectRep.MetricsData metricsData = dataQueue.pollAlertMetricsData();
                     if (metricsData != null) {
                         calculate(metricsData);
+                        NoMessageAlarm.LATEST_METRICS.put(metricsData.getId(), System.currentTimeMillis());
                     }
                 } catch (Exception e) {
                     log.error(e.getMessage());
@@ -321,4 +322,5 @@ public class CalculateAlarm {
             }
         }
     }
+
 }

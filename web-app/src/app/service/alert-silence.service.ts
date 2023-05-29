@@ -1,10 +1,10 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import {HttpClient, HttpParams} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
 
-import { AlertSilence } from '../pojo/AlertSilence';
-import { Message } from '../pojo/Message';
-import { Page } from '../pojo/Page';
+import {AlertSilence} from '../pojo/AlertSilence';
+import {Message} from '../pojo/Message';
+import {Page} from '../pojo/Page';
 
 const alert_silence_uri = '/alert/silence';
 const alert_silences_uri = '/alert/silences';

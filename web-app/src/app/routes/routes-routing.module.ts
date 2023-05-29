@@ -1,17 +1,17 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { environment } from '@env/environment';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {environment} from '@env/environment';
 
 // layout
-import { DetectAuthGuard } from '../core/guard/detect-auth-guard';
-import { LayoutBasicComponent } from '../layout/basic/basic.component';
-import { LayoutPassportComponent } from '../layout/passport/passport.component';
+import {DetectAuthGuard} from '../core/guard/detect-auth-guard';
+import {LayoutBasicComponent} from '../layout/basic/basic.component';
+import {LayoutPassportComponent} from '../layout/passport/passport.component';
 // dashboard pages
-import { DashboardComponent } from './dashboard/dashboard.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
 // single pages
-import { UserLockComponent } from './passport/lock/lock.component';
+import {UserLockComponent} from './passport/lock/lock.component';
 // passport pages
-import { UserLoginComponent } from './passport/login/login.component';
+import {UserLoginComponent} from './passport/login/login.component';
 
 const routes: Routes = [
   {

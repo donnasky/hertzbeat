@@ -2,7 +2,7 @@ package org.dromara.hertzbeat.manager.service;
 
 import org.dromara.hertzbeat.alert.calculate.CalculateAlarm;
 import org.dromara.hertzbeat.alert.dao.AlertDefineBindDao;
-import org.dromara.hertzbeat.collector.dispatch.entrance.internal.CollectJobService;
+import org.dromara.hertzbeat.common.constants.CommonConstants;
 import org.dromara.hertzbeat.common.entity.alerter.Alert;
 import org.dromara.hertzbeat.common.entity.job.Job;
 import org.dromara.hertzbeat.common.entity.job.Metrics;
@@ -10,7 +10,6 @@ import org.dromara.hertzbeat.common.entity.manager.Monitor;
 import org.dromara.hertzbeat.common.entity.manager.Param;
 import org.dromara.hertzbeat.common.entity.manager.ParamDefine;
 import org.dromara.hertzbeat.common.entity.message.CollectRep;
-import org.dromara.hertzbeat.common.constants.CommonConstants;
 import org.dromara.hertzbeat.manager.dao.MonitorDao;
 import org.dromara.hertzbeat.manager.dao.ParamDao;
 import org.dromara.hertzbeat.manager.dao.TagMonitorBindDao;
@@ -110,7 +109,7 @@ class MonitorServiceTest {
         when(appService.getAppDefine(monitor.getApp())).thenReturn(job);
 
         List<CollectRep.MetricsData> collectRep = new ArrayList<>();
-        when(collectJobService.collectSyncJobData(job)).thenReturn(collectRep);
+        when(collectJobService.collectSyncJobData(monitor.getCollectorId(),job)).thenReturn(collectRep);
 
         List<Param> params = Collections.singletonList(new Param());
         assertThrows(MonitorDetectException.class, () -> monitorService.detectMonitor(monitor, params));
@@ -136,7 +135,7 @@ class MonitorServiceTest {
         CollectRep.MetricsData failCode = CollectRep.MetricsData.newBuilder()
                 .setCode(CollectRep.Code.TIMEOUT).setMsg("collect timeout").build();
         collectRep.add(failCode);
-        when(collectJobService.collectSyncJobData(job)).thenReturn(collectRep);
+        when(collectJobService.collectSyncJobData(monitor.getCollectorId(),job)).thenReturn(collectRep);
 
         List<Param> params = Collections.singletonList(new Param());
         assertThrows(MonitorDetectException.class, () -> monitorService.detectMonitor(monitor, params));
@@ -151,7 +150,7 @@ class MonitorServiceTest {
                 .build();
         Job job = new Job();
         when(appService.getAppDefine(monitor.getApp())).thenReturn(job);
-        when(collectJobService.addAsyncCollectJob(job)).thenReturn(1L);
+        when(collectJobService.addAsyncCollectJob(monitor.getCollectorId(),job)).thenReturn(1L);
         when(monitorDao.save(monitor)).thenReturn(monitor);
         List<Param> params = Collections.singletonList(new Param());
         when(paramDao.saveAll(params)).thenReturn(params);
@@ -167,7 +166,7 @@ class MonitorServiceTest {
                 .build();
         Job job = new Job();
         when(appService.getAppDefine(monitor.getApp())).thenReturn(job);
-        when(collectJobService.addAsyncCollectJob(job)).thenReturn(1L);
+        when(collectJobService.addAsyncCollectJob(monitor.getCollectorId(),job)).thenReturn(1L);
         List<Param> params = Collections.singletonList(new Param());
         when(monitorDao.save(monitor)).thenThrow(RuntimeException.class);
         assertThrows(MonitorDatabaseException.class, () -> monitorService.addMonitor(monitor, params));

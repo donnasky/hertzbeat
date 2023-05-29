@@ -1,10 +1,10 @@
-import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import {HttpClient, HttpParams, HttpResponse} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
 
-import { Message } from '../pojo/Message';
-import { Monitor } from '../pojo/Monitor';
-import { Page } from '../pojo/Page';
+import {Message} from '../pojo/Message';
+import {Monitor} from '../pojo/Monitor';
+import {Page} from '../pojo/Page';
 
 const monitor_uri = '/monitor';
 const monitors_uri = '/monitors';
@@ -95,6 +95,7 @@ export class MonitorService {
     app: string,
     pageIndex: number,
     pageSize: number,
+    collectorId: number,
     sortField?: string | null,
     sortOrder?: string | null
   ): Observable<Message<Page<Monitor>>> {

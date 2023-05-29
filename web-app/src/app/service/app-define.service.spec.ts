@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { AppDefineService } from './app-define.service';
+import {AppDefineService} from './app-define.service';
 
 describe('AppDefineService', () => {
   let service: AppDefineService;

@@ -21,7 +21,8 @@ import com.jayway.jsonpath.*;
 import com.jayway.jsonpath.spi.cache.CacheProvider;
 import com.jayway.jsonpath.spi.cache.LRUCache;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * json path parser

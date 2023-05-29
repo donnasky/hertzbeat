@@ -1,15 +1,15 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { I18NService } from '@core';
-import { ALAIN_I18N_TOKEN, SettingsService } from '@delon/theme';
-import { NzModalService } from 'ng-zorro-antd/modal';
-import { NzNotificationService } from 'ng-zorro-antd/notification';
-import { NzTableQueryParams } from 'ng-zorro-antd/table';
-import { finalize } from 'rxjs/operators';
+import {Component, Inject, OnInit} from '@angular/core';
+import {I18NService} from '@core';
+import {ALAIN_I18N_TOKEN, SettingsService} from '@delon/theme';
+import {NzModalService} from 'ng-zorro-antd/modal';
+import {NzNotificationService} from 'ng-zorro-antd/notification';
+import {NzTableQueryParams} from 'ng-zorro-antd/table';
+import {finalize} from 'rxjs/operators';
 
-import { AlertSilence } from '../../../pojo/AlertSilence';
-import { TagItem } from '../../../pojo/NoticeRule';
-import { AlertSilenceService } from '../../../service/alert-silence.service';
-import { TagService } from '../../../service/tag.service';
+import {AlertSilence} from '../../../pojo/AlertSilence';
+import {TagItem} from '../../../pojo/NoticeRule';
+import {AlertSilenceService} from '../../../service/alert-silence.service';
+import {TagService} from '../../../service/tag.service';
 
 @Component({
   selector: 'app-alert-silence',

@@ -1,6 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { ExceptionType } from '@delon/abc/exception';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {ExceptionType} from '@delon/abc/exception';
 
 @Component({
   selector: 'app-exception',

@@ -1,15 +1,22 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { I18NService } from '@core';
-import { ALAIN_I18N_TOKEN } from '@delon/theme';
-import { EChartsOption } from 'echarts';
-import { NzMessageService } from 'ng-zorro-antd/message';
-import { fromEvent } from 'rxjs';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  Inject,
+  OnDestroy,
+  OnInit
+} from '@angular/core';
+import {Router} from '@angular/router';
+import {I18NService} from '@core';
+import {ALAIN_I18N_TOKEN} from '@delon/theme';
+import {EChartsOption} from 'echarts';
+import {NzMessageService} from 'ng-zorro-antd/message';
+import {fromEvent} from 'rxjs';
 
-import { Alert } from '../../pojo/Alert';
-import { AppCount } from '../../pojo/AppCount';
-import { AlertService } from '../../service/alert.service';
-import { MonitorService } from '../../service/monitor.service';
+import {Alert} from '../../pojo/Alert';
+import {AppCount} from '../../pojo/AppCount';
+import {AlertService} from '../../service/alert.service';
+import {MonitorService} from '../../service/monitor.service';
 
 @Component({
   selector: 'app-dashboard',

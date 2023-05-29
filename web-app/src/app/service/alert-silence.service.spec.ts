@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { AlertSilenceService } from './alert-silence.service';
+import {AlertSilenceService} from './alert-silence.service';
 
 describe('AlertSilenceService', () => {
   let service: AlertSilenceService;

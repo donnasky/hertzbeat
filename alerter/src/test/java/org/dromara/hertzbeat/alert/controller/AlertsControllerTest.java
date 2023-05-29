@@ -2,9 +2,9 @@ package org.dromara.hertzbeat.alert.controller;
 
 import org.dromara.hertzbeat.alert.dto.AlertSummary;
 import org.dromara.hertzbeat.alert.service.AlertService;
+import org.dromara.hertzbeat.common.constants.CommonConstants;
 import org.dromara.hertzbeat.common.entity.alerter.Alert;
 import org.dromara.hertzbeat.common.entity.dto.AlertReport;
-import org.dromara.hertzbeat.common.constants.CommonConstants;
 import org.dromara.hertzbeat.common.util.JsonUtil;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

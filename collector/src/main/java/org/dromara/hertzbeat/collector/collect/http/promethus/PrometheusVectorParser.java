@@ -1,14 +1,14 @@
 package org.dromara.hertzbeat.collector.collect.http.promethus;
 
 import com.google.gson.JsonElement;
+import lombok.NoArgsConstructor;
 import org.dromara.hertzbeat.collector.dispatch.DispatchConstants;
 import org.dromara.hertzbeat.collector.util.CollectUtil;
+import org.dromara.hertzbeat.common.constants.CommonConstants;
 import org.dromara.hertzbeat.common.entity.dto.PromVectorOrMatrix;
 import org.dromara.hertzbeat.common.entity.job.protocol.HttpProtocol;
 import org.dromara.hertzbeat.common.entity.message.CollectRep;
-import org.dromara.hertzbeat.common.constants.CommonConstants;
 import org.dromara.hertzbeat.common.util.JsonUtil;
-import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.util.List;

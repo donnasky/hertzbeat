@@ -17,12 +17,12 @@
 
 package org.dromara.hertzbeat.manager.service.impl;
 
+import lombok.extern.slf4j.Slf4j;
 import org.dromara.hertzbeat.alert.AlerterProperties;
-import org.dromara.hertzbeat.common.entity.alerter.Alert;
 import org.dromara.hertzbeat.common.constants.CommonConstants;
+import org.dromara.hertzbeat.common.entity.alerter.Alert;
 import org.dromara.hertzbeat.common.util.ResourceBundleUtil;
 import org.dromara.hertzbeat.manager.service.MailService;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;

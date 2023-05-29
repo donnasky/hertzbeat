@@ -1,12 +1,12 @@
-import { ChangeDetectorRef, Component, Inject, OnInit } from '@angular/core';
-import { I18NService } from '@core';
-import { ALAIN_I18N_TOKEN } from '@delon/theme';
-import { NzMessageService } from 'ng-zorro-antd/message';
-import { NzNotificationService } from 'ng-zorro-antd/notification';
-import { finalize } from 'rxjs/operators';
+import {ChangeDetectorRef, Component, Inject, OnInit} from '@angular/core';
+import {I18NService} from '@core';
+import {ALAIN_I18N_TOKEN} from '@delon/theme';
+import {NzMessageService} from 'ng-zorro-antd/message';
+import {NzNotificationService} from 'ng-zorro-antd/notification';
+import {finalize} from 'rxjs/operators';
 
-import { NoticeSender } from '../../../../pojo/NoticeSender';
-import { NoticeSenderService } from '../../../../service/notice-sender.service';
+import {NoticeSender} from '../../../../pojo/NoticeSender';
+import {NoticeSenderService} from '../../../../service/notice-sender.service';
 
 @Component({
   selector: 'app-message-server',

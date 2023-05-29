@@ -1,11 +1,11 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import {HttpClient, HttpParams} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
 
-import { AlertDefine } from '../pojo/AlertDefine';
-import { AlertDefineBind } from '../pojo/AlertDefineBind';
-import { Message } from '../pojo/Message';
-import { Page } from '../pojo/Page';
+import {AlertDefine} from '../pojo/AlertDefine';
+import {AlertDefineBind} from '../pojo/AlertDefineBind';
+import {Message} from '../pojo/Message';
+import {Page} from '../pojo/Page';
 
 const alert_define_uri = '/alert/define';
 const alert_defines_uri = '/alert/defines';

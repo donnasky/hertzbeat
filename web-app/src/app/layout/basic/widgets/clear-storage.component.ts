@@ -1,8 +1,8 @@
-import { ChangeDetectionStrategy, Component, HostListener, Inject } from '@angular/core';
-import { I18NService } from '@core';
-import { ALAIN_I18N_TOKEN } from '@delon/theme';
-import { NzMessageService } from 'ng-zorro-antd/message';
-import { NzModalService } from 'ng-zorro-antd/modal';
+import {ChangeDetectionStrategy, Component, HostListener, Inject} from '@angular/core';
+import {I18NService} from '@core';
+import {ALAIN_I18N_TOKEN} from '@delon/theme';
+import {NzMessageService} from 'ng-zorro-antd/message';
+import {NzModalService} from 'ng-zorro-antd/modal';
 
 @Component({
   selector: 'header-clear-storage',

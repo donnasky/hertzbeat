@@ -18,6 +18,7 @@
 package org.dromara.hertzbeat.collector.collect.database;
 
 import com.mysql.cj.jdbc.exceptions.CommunicationsException;
+import lombok.extern.slf4j.Slf4j;
 import org.dromara.hertzbeat.collector.collect.AbstractCollect;
 import org.dromara.hertzbeat.collector.collect.common.cache.CacheIdentifier;
 import org.dromara.hertzbeat.collector.collect.common.cache.CommonCache;
@@ -25,19 +26,15 @@ import org.dromara.hertzbeat.collector.collect.common.cache.JdbcConnect;
 import org.dromara.hertzbeat.collector.dispatch.DispatchConstants;
 import org.dromara.hertzbeat.collector.util.CollectUtil;
 import org.dromara.hertzbeat.common.constants.CollectorConstants;
+import org.dromara.hertzbeat.common.constants.CommonConstants;
 import org.dromara.hertzbeat.common.entity.job.Metrics;
 import org.dromara.hertzbeat.common.entity.job.protocol.JdbcProtocol;
 import org.dromara.hertzbeat.common.entity.message.CollectRep;
-import org.dromara.hertzbeat.common.constants.CommonConstants;
 import org.dromara.hertzbeat.common.util.CommonUtil;
-import lombok.extern.slf4j.Slf4j;
 import org.postgresql.util.PSQLException;
+import org.springframework.stereotype.Service;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
@@ -48,6 +45,7 @@ import java.util.Optional;
  * @author tomsun28
  *
  */
+@Service
 @Slf4j
 public class JdbcCommonCollect extends AbstractCollect {
 

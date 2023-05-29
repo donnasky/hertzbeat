@@ -17,18 +17,20 @@
 
 package org.dromara.hertzbeat.manager.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.dromara.hertzbeat.common.entity.dto.Message;
 import org.dromara.hertzbeat.manager.pojo.dto.AppCount;
 import org.dromara.hertzbeat.manager.pojo.dto.Dashboard;
 import org.dromara.hertzbeat.manager.service.MonitorService;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import java.util.List;
+
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 /**

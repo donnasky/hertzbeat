@@ -117,6 +117,7 @@
   <thead>
     <tr>
       <th nzAlign="center" nzLeft nzWidth="3%" [(nzChecked)]="checkedAll" (nzCheckedChange)="onAllChecked($event)"></th>
+      <th nzAlign="center" nzWidth="12%" nzColumnKey="collectorName" [nzSortFn]="true">{{ 'monitor.collectorName' | i18n }}</th>
       <th nzAlign="center" nzWidth="20%" nzColumnKey="name" [nzSortFn]="true">{{ 'monitor.name' | i18n }}</th>
       <th nzAlign="center" nzWidth="12%" nzColumnKey="status" [nzSortFn]="true">{{ 'monitor.status' | i18n }}</th>
       <th nzAlign="center" nzWidth="15%">{{ 'monitor.host' | i18n }}</th>
@@ -128,6 +129,7 @@
   <tbody>
     <tr *ngFor="let data of fixedTable.data">
       <td nzAlign="center" nzLeft [nzChecked]="checkedMonitorIds.has(data.id)" (nzCheckedChange)="onItemChecked(data.id, $event)"></td>
+      <td nzAlign="center">{{ data.collectorName }}</td>
       <td nzAlign="center">
         <button nz-button nzSize="default" nzType="link" [routerLink]="['/monitors/' + data.id]">
           {{ data.name }}

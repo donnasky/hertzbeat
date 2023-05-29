@@ -10,11 +10,11 @@ import {
   OnDestroy,
   Output
 } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { debounceTime, distinctUntilChanged, tap } from 'rxjs/operators';
+import {BehaviorSubject} from 'rxjs';
+import {debounceTime, distinctUntilChanged, tap} from 'rxjs/operators';
 
-import { Monitor } from '../../../pojo/Monitor';
-import { MonitorService } from '../../../service/monitor.service';
+import {Monitor} from '../../../pojo/Monitor';
+import {MonitorService} from '../../../service/monitor.service';
 
 @Component({
   selector: 'header-search',

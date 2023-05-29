@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { MonitorEditComponent } from './monitor-edit.component';
+import {MonitorEditComponent} from './monitor-edit.component';
 
 describe('MonitorModifyComponent', () => {
   let component: MonitorEditComponent;

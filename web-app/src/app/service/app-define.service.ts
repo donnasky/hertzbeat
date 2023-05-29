@@ -1,9 +1,9 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import {HttpClient, HttpParams} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
 
-import { Message } from '../pojo/Message';
-import { ParamDefine } from '../pojo/ParamDefine';
+import {Message} from '../pojo/Message';
+import {ParamDefine} from '../pojo/ParamDefine';
 
 const app_hierarchy = '/apps/hierarchy';
 

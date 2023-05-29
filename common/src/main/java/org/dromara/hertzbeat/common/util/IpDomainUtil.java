@@ -19,6 +19,7 @@ package org.dromara.hertzbeat.common.util;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.conn.util.InetAddressUtils;
+
 import java.net.Inet4Address;
 import java.net.InetAddress;
 import java.net.NetworkInterface;

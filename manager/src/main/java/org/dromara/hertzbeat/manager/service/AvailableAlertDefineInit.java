@@ -2,8 +2,8 @@ package org.dromara.hertzbeat.manager.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.dromara.hertzbeat.alert.dao.AlertDefineDao;
-import org.dromara.hertzbeat.common.entity.alerter.AlertDefine;
 import org.dromara.hertzbeat.common.constants.CommonConstants;
+import org.dromara.hertzbeat.common.entity.alerter.AlertDefine;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;

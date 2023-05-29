@@ -1,9 +1,9 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
 
-import { Message } from '../pojo/Message';
-import { NoticeReceiver } from '../pojo/NoticeReceiver';
+import {Message} from '../pojo/Message';
+import {NoticeReceiver} from '../pojo/NoticeReceiver';
 
 const notice_receiver_uri = '/notice/receiver';
 const notice_receivers_uri = '/notice/receivers';

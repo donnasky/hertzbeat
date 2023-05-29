@@ -1,10 +1,17 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Inject, OnDestroy } from '@angular/core';
-import { ActivationEnd, Router } from '@angular/router';
-import { I18NService } from '@core';
-import { ALAIN_I18N_TOKEN } from '@delon/theme';
-import { NzMenuModeType } from 'ng-zorro-antd/menu';
-import { fromEvent, Subscription } from 'rxjs';
-import { debounceTime, filter } from 'rxjs/operators';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  Inject,
+  OnDestroy
+} from '@angular/core';
+import {ActivationEnd, Router} from '@angular/router';
+import {I18NService} from '@core';
+import {ALAIN_I18N_TOKEN} from '@delon/theme';
+import {NzMenuModeType} from 'ng-zorro-antd/menu';
+import {fromEvent, Subscription} from 'rxjs';
+import {debounceTime, filter} from 'rxjs/operators';
 
 @Component({
   selector: 'app-settings',

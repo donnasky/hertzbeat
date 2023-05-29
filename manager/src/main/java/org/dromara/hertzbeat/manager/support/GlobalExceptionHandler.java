@@ -17,13 +17,13 @@
 
 package org.dromara.hertzbeat.manager.support;
 
+import lombok.extern.slf4j.Slf4j;
+import org.dromara.hertzbeat.common.constants.CommonConstants;
 import org.dromara.hertzbeat.common.entity.dto.Message;
 import org.dromara.hertzbeat.manager.support.exception.AlertNoticeException;
 import org.dromara.hertzbeat.manager.support.exception.MonitorDatabaseException;
 import org.dromara.hertzbeat.manager.support.exception.MonitorDetectException;
 import org.dromara.hertzbeat.manager.support.exception.MonitorMetricsException;
-import org.dromara.hertzbeat.common.constants.CommonConstants;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

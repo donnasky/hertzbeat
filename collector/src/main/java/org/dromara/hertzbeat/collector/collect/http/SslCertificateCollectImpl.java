@@ -17,16 +17,17 @@
 
 package org.dromara.hertzbeat.collector.collect.http;
 
+import lombok.extern.slf4j.Slf4j;
 import org.dromara.hertzbeat.collector.collect.AbstractCollect;
 import org.dromara.hertzbeat.collector.dispatch.DispatchConstants;
 import org.dromara.hertzbeat.common.constants.CollectorConstants;
+import org.dromara.hertzbeat.common.constants.CommonConstants;
 import org.dromara.hertzbeat.common.entity.job.Metrics;
 import org.dromara.hertzbeat.common.entity.job.protocol.HttpProtocol;
 import org.dromara.hertzbeat.common.entity.message.CollectRep;
-import org.dromara.hertzbeat.common.constants.CommonConstants;
 import org.dromara.hertzbeat.common.util.CommonUtil;
 import org.dromara.hertzbeat.common.util.IpDomainUtil;
-import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
 
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLException;
@@ -48,6 +49,7 @@ import static org.dromara.hertzbeat.common.constants.SignConstants.RIGHT_DASH;
  * @author tomsun28
  *
  */
+@Service
 @Slf4j
 public class SslCertificateCollectImpl extends AbstractCollect {
 

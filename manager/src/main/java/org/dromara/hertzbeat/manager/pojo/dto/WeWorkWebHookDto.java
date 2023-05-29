@@ -43,7 +43,7 @@ public class WeWorkWebHookDto {
     /**
      * 文本格式
      */
-    private static final String TEXT = "text";
+    private static final String TEXT = "TEXT";
 
     /**
      * 消息类型

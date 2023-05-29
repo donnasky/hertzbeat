@@ -1,8 +1,8 @@
 package org.dromara.hertzbeat.collector.collect.http.promethus.exporter;
 
+import lombok.extern.slf4j.Slf4j;
 import org.dromara.hertzbeat.collector.collect.http.promethus.ParseException;
 import org.dromara.hertzbeat.common.util.StrBuffer;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.StringUtils;
 
 import java.nio.charset.StandardCharsets;

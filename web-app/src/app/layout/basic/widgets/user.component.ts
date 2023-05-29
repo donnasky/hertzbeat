@@ -1,8 +1,8 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { SettingsService, User } from '@delon/theme';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {Router} from '@angular/router';
+import {SettingsService, User} from '@delon/theme';
 
-import { LocalStorageService } from '../../../service/local-storage.service';
+import {LocalStorageService} from '../../../service/local-storage.service';
 
 @Component({
   selector: 'header-user',

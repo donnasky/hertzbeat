@@ -17,10 +17,10 @@
 
 package org.dromara.hertzbeat.manager.pojo.dto;
 
-import org.dromara.hertzbeat.common.entity.manager.Monitor;
-import org.dromara.hertzbeat.common.entity.manager.Param;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
+import org.dromara.hertzbeat.common.entity.manager.Monitor;
+import org.dromara.hertzbeat.common.entity.manager.Param;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;

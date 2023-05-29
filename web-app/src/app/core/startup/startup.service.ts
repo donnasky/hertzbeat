@@ -1,17 +1,18 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable, Inject } from '@angular/core';
-import { Router } from '@angular/router';
-import { ACLService } from '@delon/acl';
-import { DA_SERVICE_TOKEN, ITokenService } from '@delon/auth';
-import { ALAIN_I18N_TOKEN, Menu, MenuService, SettingsService, TitleService } from '@delon/theme';
-import type { NzSafeAny } from 'ng-zorro-antd/core/types';
-import { NzIconService } from 'ng-zorro-antd/icon';
-import { Observable, zip, of } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import {HttpClient} from '@angular/common/http';
+import {Inject, Injectable} from '@angular/core';
+import {Router} from '@angular/router';
+import {ACLService} from '@delon/acl';
+import {DA_SERVICE_TOKEN, ITokenService} from '@delon/auth';
+import {ALAIN_I18N_TOKEN, Menu, MenuService, SettingsService, TitleService} from '@delon/theme';
+import type {NzSafeAny} from 'ng-zorro-antd/core/types';
+import {NzIconService} from 'ng-zorro-antd/icon';
+import {Observable, zip} from 'rxjs';
+import {catchError, map} from 'rxjs/operators';
 
-import { ICONS } from '../../../style-icons';
-import { ICONS_AUTO } from '../../../style-icons-auto';
-import { I18NService } from '../i18n/i18n.service';
+import {ICONS} from '../../../style-icons';
+import {ICONS_AUTO} from '../../../style-icons-auto';
+import {I18NService} from '../i18n/i18n.service';
+
 /**
  * Used for application startup
  * Generally used to get the basic data of the application, like: Menu Data, User Data, etc.

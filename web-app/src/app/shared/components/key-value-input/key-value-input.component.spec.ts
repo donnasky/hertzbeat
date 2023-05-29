@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { KeyValueInputComponent } from './key-value-input.component';
+import {KeyValueInputComponent} from './key-value-input.component';
 
 describe('KeyValueInputComponent', () => {
   let component: KeyValueInputComponent;

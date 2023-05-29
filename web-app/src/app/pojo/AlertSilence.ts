@@ -1,4 +1,4 @@
-import { TagItem } from './NoticeRule';
+import {TagItem} from './NoticeRule';
 
 export class AlertSilence {
   id!: number;

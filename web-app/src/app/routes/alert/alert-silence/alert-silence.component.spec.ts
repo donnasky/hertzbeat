@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AlertSilenceComponent } from './alert-silence.component';
+import {AlertSilenceComponent} from './alert-silence.component';
 
 describe('AlertSilenceComponent', () => {
   let component: AlertSilenceComponent;

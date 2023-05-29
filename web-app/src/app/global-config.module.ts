@@ -1,12 +1,13 @@
 /* eslint-disable import/order */
-import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
-import { DelonACLModule } from '@delon/acl';
-import { AlainThemeModule } from '@delon/theme';
-import { AlainConfig, ALAIN_CONFIG } from '@delon/util/config';
+import {ModuleWithProviders, NgModule, Optional, SkipSelf} from '@angular/core';
+import {DelonACLModule} from '@delon/acl';
+import {AlainThemeModule} from '@delon/theme';
+import {ALAIN_CONFIG, AlainConfig} from '@delon/util/config';
 
-import { throwIfAlreadyLoaded } from '@core';
+import {throwIfAlreadyLoaded} from '@core';
 
-import { environment } from '@env/environment';
+import {environment} from '@env/environment';
+import {NZ_CONFIG, NzConfig} from 'ng-zorro-antd/core/config';
 
 // Please refer to: https://ng-alain.com/docs/global-config
 // #region NG-ALAIN Config
@@ -51,8 +52,6 @@ const alainProvides = [{ provide: ALAIN_CONFIG, useValue: alainConfig }];
 
 // Please refer to: https://ng.ant.design/docs/global-config/en#how-to-use
 // #region NG-ZORRO Config
-
-import { NzConfig, NZ_CONFIG } from 'ng-zorro-antd/core/config';
 
 const ngZorroConfig: NzConfig = {};
 

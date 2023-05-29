@@ -1,6 +1,6 @@
-import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
 
-import { SettingTagsComponent } from './tags.component';
+import {SettingTagsComponent} from './tags.component';
 
 describe('SettingTagsComponent', () => {
   let component: SettingTagsComponent;

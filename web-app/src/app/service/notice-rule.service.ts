@@ -1,9 +1,9 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
 
-import { Message } from '../pojo/Message';
-import { NoticeRule } from '../pojo/NoticeRule';
+import {Message} from '../pojo/Message';
+import {NoticeRule} from '../pojo/NoticeRule';
 
 const notice_rule_uri = '/notice/rule';
 const notice_rules_uri = '/notice/rules';

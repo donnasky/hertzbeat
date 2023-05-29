@@ -17,11 +17,11 @@
 
 package org.dromara.hertzbeat.collector.dispatch.entrance.internal;
 
+import lombok.extern.slf4j.Slf4j;
 import org.dromara.hertzbeat.collector.dispatch.timer.TimerDispatch;
 import org.dromara.hertzbeat.common.entity.job.Job;
 import org.dromara.hertzbeat.common.entity.message.CollectRep;
 import org.dromara.hertzbeat.common.util.SnowFlakeIdGenerator;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

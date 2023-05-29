@@ -17,12 +17,12 @@
 
 package org.dromara.hertzbeat.common.entity.alerter;
 
-import org.dromara.hertzbeat.common.entity.manager.Monitor;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.dromara.hertzbeat.common.entity.manager.Monitor;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 import org.springframework.data.annotation.CreatedDate;

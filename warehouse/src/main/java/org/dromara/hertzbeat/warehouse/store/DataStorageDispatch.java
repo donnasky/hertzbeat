@@ -17,10 +17,10 @@
 
 package org.dromara.hertzbeat.warehouse.store;
 
+import lombok.extern.slf4j.Slf4j;
 import org.dromara.hertzbeat.common.entity.message.CollectRep;
 import org.dromara.hertzbeat.common.queue.CommonDataQueue;
 import org.dromara.hertzbeat.warehouse.WarehouseWorkerPool;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

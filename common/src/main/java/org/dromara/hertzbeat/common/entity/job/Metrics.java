@@ -18,13 +18,13 @@
 package org.dromara.hertzbeat.common.entity.job;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.dromara.hertzbeat.common.entity.message.CollectRep;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.dromara.hertzbeat.common.entity.job.protocol.*;
+import org.dromara.hertzbeat.common.entity.message.CollectRep;
 
 import java.util.List;
 import java.util.Objects;

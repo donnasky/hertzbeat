@@ -17,8 +17,8 @@
 
 package org.dromara.hertzbeat.common.entity.alerter;
 
-import org.dromara.hertzbeat.common.util.JsonUtil;
 import com.fasterxml.jackson.core.type.TypeReference;
+import org.dromara.hertzbeat.common.util.JsonUtil;
 
 import javax.persistence.AttributeConverter;
 import java.util.Map;

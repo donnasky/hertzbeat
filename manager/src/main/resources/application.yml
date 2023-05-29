@@ -16,7 +16,7 @@ server:
   port: 1157
 spring:
   application:
-    name: ${HOSTNAME:@hertzbeat@}${PID}
+    name: ${HOSTNAME:@hertzbeat@}
   profiles:
     active: prod
   mvc:
@@ -69,13 +69,19 @@ spring:
     activate:
       on-profile: prod
 
+#  datasource:
+#    driver-class-name: org.h2.Driver
+#    username: sa
+#    password: 123456
+#    url: jdbc:h2:./data/hertzbeat;MODE=MYSQL
+#    hikari:
+#      max-lifetime: 120000
+
   datasource:
-    driver-class-name: org.h2.Driver
-    username: sa
-    password: 123456
-    url: jdbc:h2:./data/hertzbeat;MODE=MYSQL
-    hikari:
-      max-lifetime: 120000
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: pg123456
+    url: jdbc:mysql://192.168.40.39:13306/hertzbeat?useUnicode=true&characterEncoding=utf-8&useSSL=false
 
   jpa:
     hibernate:
@@ -100,10 +106,10 @@ spring:
 common:
   queue:
     # memory or kafka
-    type: memory
+    type: kafka
     # properties when queue type is kafka
     kafka:
-      servers: 127.0.0.1:9092
+      servers: 192.168.40.39:19092
       alert-topic: async-collect-data-debug
       alert-metric-topic: temp-alert-data
       persistent-storage-topic: persistent-storage-data

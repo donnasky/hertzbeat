@@ -1,9 +1,9 @@
 package org.dromara.hertzbeat.manager.controller;
 
+import com.usthe.sureness.util.JsonWebTokenUtil;
 import org.dromara.hertzbeat.common.constants.CommonConstants;
 import org.dromara.hertzbeat.common.util.JsonUtil;
 import org.dromara.hertzbeat.manager.pojo.dto.LoginDto;
-import com.usthe.sureness.util.JsonWebTokenUtil;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

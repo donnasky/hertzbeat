@@ -122,6 +122,12 @@
           "link": "/setting/tags"
         },
         {
+          "text": "collectors",
+          "i18n": "menu.extras.collectors",
+          "icon": "anticon-tags",
+          "link": "/setting/collectors"
+        },
+        {
           "text": "define",
           "i18n": "menu.extras.define",
           "icon": "anticon-code",

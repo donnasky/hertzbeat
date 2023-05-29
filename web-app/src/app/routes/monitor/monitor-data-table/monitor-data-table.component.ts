@@ -1,7 +1,7 @@
-import { Component, Input } from '@angular/core';
-import { NzNotificationService } from 'ng-zorro-antd/notification';
+import {Component, Input} from '@angular/core';
+import {NzNotificationService} from 'ng-zorro-antd/notification';
 
-import { MonitorService } from '../../../service/monitor.service';
+import {MonitorService} from '../../../service/monitor.service';
 
 @Component({
   selector: 'app-monitor-data-table',

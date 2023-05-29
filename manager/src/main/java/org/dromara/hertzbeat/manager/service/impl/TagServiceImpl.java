@@ -17,10 +17,10 @@
 
 package org.dromara.hertzbeat.manager.service.impl;
 
+import lombok.extern.slf4j.Slf4j;
 import org.dromara.hertzbeat.common.entity.manager.Tag;
 import org.dromara.hertzbeat.manager.dao.TagDao;
 import org.dromara.hertzbeat.manager.service.TagService;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

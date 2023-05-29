@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AlertSettingComponent } from './alert-setting.component';
+import {AlertSettingComponent} from './alert-setting.component';
 
 describe('AlertSettingComponent', () => {
   let component: AlertSettingComponent;

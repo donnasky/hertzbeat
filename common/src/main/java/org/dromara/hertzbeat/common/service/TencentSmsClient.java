@@ -5,9 +5,9 @@ import com.tencentcloudapi.sms.v20210111.SmsClient;
 import com.tencentcloudapi.sms.v20210111.models.SendSmsRequest;
 import com.tencentcloudapi.sms.v20210111.models.SendSmsResponse;
 import com.tencentcloudapi.sms.v20210111.models.SendStatus;
+import lombok.extern.slf4j.Slf4j;
 import org.dromara.hertzbeat.common.config.CommonProperties;
 import org.dromara.hertzbeat.common.support.exception.SendMessageException;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 

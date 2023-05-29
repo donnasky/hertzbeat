@@ -1,18 +1,20 @@
-import { ChangeDetectorRef, Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { I18NService } from '@core';
-import { ALAIN_I18N_TOKEN, TitleService } from '@delon/theme';
-import { NzNotificationService } from 'ng-zorro-antd/notification';
-import { switchMap } from 'rxjs/operators';
+import {ChangeDetectorRef, Component, Inject, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {ActivatedRoute, ParamMap, Router} from '@angular/router';
+import {I18NService} from '@core';
+import {ALAIN_I18N_TOKEN, TitleService} from '@delon/theme';
+import {NzNotificationService} from 'ng-zorro-antd/notification';
+import {switchMap} from 'rxjs/operators';
 
-import { Monitor } from '../../../pojo/Monitor';
-import { Param } from '../../../pojo/Param';
-import { ParamDefine } from '../../../pojo/ParamDefine';
-import { Tag } from '../../../pojo/Tag';
-import { AppDefineService } from '../../../service/app-define.service';
-import { MonitorService } from '../../../service/monitor.service';
-import { TagService } from '../../../service/tag.service';
+import {Collector} from "../../../pojo/Collector";
+import {Monitor} from '../../../pojo/Monitor';
+import {Param} from '../../../pojo/Param';
+import {ParamDefine} from '../../../pojo/ParamDefine';
+import {Tag} from '../../../pojo/Tag';
+import {AppDefineService} from '../../../service/app-define.service';
+import {MonitorService} from '../../../service/monitor.service';
+import {TagService} from '../../../service/tag.service';
+import {CollectorService} from "../../../service/collector.service";
 
 @Component({
   selector: 'app-monitor-add',
@@ -30,10 +32,14 @@ export class MonitorNewComponent implements OnInit {
   passwordVisible: boolean = false;
   // 是否显示加载中
   isSpinning: boolean = false;
+  collectors!: Collector[];
+  collectorsOption: any[] = [];
   spinningTip: string = 'Loading...';
+
   constructor(
     private appDefineSvc: AppDefineService,
     private monitorSvc: MonitorService,
+    private CollectorSvc: CollectorService,
     private route: ActivatedRoute,
     private router: Router,
     private notifySvc: NzNotificationService,
@@ -112,6 +118,32 @@ export class MonitorNewComponent implements OnInit {
     this.monitor.name = `${this.monitor.app.toUpperCase()}_${hostValue}`;
   }
 
+  loadCollectorsOption() {
+    let collectorInit$ = this.CollectorSvc.loadCollectors(undefined, 0, 100).subscribe(
+      message => {
+        if (message.code === 0) {
+          this.collectors = message.data.content;
+          this.collectorsOption = [];
+          this.collectors.forEach(item => {
+
+            this.collectorsOption.push({
+              value: item.id,
+              label: item.name
+            });
+          });
+
+        } else {
+          console.warn(message.msg);
+        }
+        collectorInit$.unsubscribe();
+      },
+      error => {
+        console.error(error.msg);
+        collectorInit$.unsubscribe();
+      }
+    );
+  }
+
   onParamBooleanChanged(booleanValue: boolean, field: string) {
     // 对SSL的端口联动处理, 不开启SSL默认80端口，开启SSL默认443
     if (field === 'ssl') {
@@ -132,7 +164,7 @@ export class MonitorNewComponent implements OnInit {
       Object.values(formGroup.controls).forEach(control => {
         if (control.invalid) {
           control.markAsDirty();
-          control.updateValueAndValidity({ onlySelf: true });
+          control.updateValueAndValidity({onlySelf: true});
         }
       });
       return;
@@ -186,7 +218,7 @@ export class MonitorNewComponent implements OnInit {
       Object.values(formGroup.controls).forEach(control => {
         if (control.invalid) {
           control.markAsDirty();
-          control.updateValueAndValidity({ onlySelf: true });
+          control.updateValueAndValidity({onlySelf: true});
         }
       });
       return;
@@ -258,6 +290,7 @@ export class MonitorNewComponent implements OnInit {
   tagSearch!: string;
   tags!: Tag[];
   checkedTags = new Set<Tag>();
+
   loadTagsTable() {
     this.tagTableLoading = true;
     let tagsReq$ = this.tagSvc.loadTags(this.tagSearch, 1, 0, 1000).subscribe(
@@ -279,13 +312,16 @@ export class MonitorNewComponent implements OnInit {
       }
     );
   }
+
   onShowTagsModal() {
     this.isManageModalVisible = true;
     this.loadTagsTable();
   }
+
   onManageModalCancel() {
     this.isManageModalVisible = false;
   }
+
   onManageModalOk() {
     this.isManageModalOkLoading = true;
     this.checkedTags.forEach(item => {
@@ -296,6 +332,7 @@ export class MonitorNewComponent implements OnInit {
     this.isManageModalOkLoading = false;
     this.isManageModalVisible = false;
   }
+
   onAllChecked(checked: boolean) {
     if (checked) {
       this.tags.forEach(tag => this.checkedTags.add(tag));
@@ -303,6 +340,7 @@ export class MonitorNewComponent implements OnInit {
       this.checkedTags.clear();
     }
   }
+
   onItemChecked(tag: Tag, checked: boolean) {
     if (checked) {
       this.checkedTags.add(tag);
@@ -310,5 +348,6 @@ export class MonitorNewComponent implements OnInit {
       this.checkedTags.delete(tag);
     }
   }
+
   // end tag model
 }

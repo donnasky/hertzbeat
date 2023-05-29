@@ -51,6 +51,31 @@
         </nz-form-control>
       </nz-form-item>
 
+<!--      <nz-form-item>
+        <nz-form-label [nzSpan]="7" nzFor="collectorId" nzRequired="true">{{ 'monitor.collectorId' | i18n }}</nz-form-label>
+        <nz-form-control [nzSpan]="12" [nzErrorTip]="'validation.required' | i18n">
+          <input [(ngModel)]="monitor.collectorId" nz-input required name="collectorId" type="number" id="collectorId" />
+        </nz-form-control>
+      </nz-form-item>-->
+      <nz-form-item>
+        <nz-form-label nzSpan="7" nzRequired="true"
+                       nzFor="collectorId">{{ 'monitor.collectorId' | i18n }}</nz-form-label>
+        <nz-form-control nzSpan="12" [nzErrorTip]="'validation.required' | i18n">
+          <nz-select
+            [(ngModel)]="monitor.collectorId"
+            (nzOpenChange)="loadCollectorsOption()"
+            [nzOptions]="collectorsOption"
+            nzShowSearch
+            nzAllowClear
+            nzPlaceHolder="Select a collector"
+            required
+            name="collectorId"
+            id="collectorId"
+          >
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+
       <nz-divider></nz-divider>
 
       <nz-form-item *ngFor="let paramDefine of paramDefines; let i = index">

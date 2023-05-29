@@ -17,16 +17,16 @@
 
 package org.dromara.hertzbeat.manager.controller;
 
-import org.dromara.hertzbeat.common.entity.dto.Message;
-import org.dromara.hertzbeat.common.entity.job.Job;
-import org.dromara.hertzbeat.common.entity.manager.ParamDefine;
-import org.dromara.hertzbeat.common.constants.CommonConstants;
-import org.dromara.hertzbeat.manager.pojo.dto.Hierarchy;
-import org.dromara.hertzbeat.manager.pojo.dto.MonitorDefineDto;
-import org.dromara.hertzbeat.manager.service.AppService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.dromara.hertzbeat.common.constants.CommonConstants;
+import org.dromara.hertzbeat.common.entity.dto.Message;
+import org.dromara.hertzbeat.common.entity.job.Job;
+import org.dromara.hertzbeat.common.entity.manager.ParamDefine;
+import org.dromara.hertzbeat.manager.pojo.dto.Hierarchy;
+import org.dromara.hertzbeat.manager.pojo.dto.MonitorDefineDto;
+import org.dromara.hertzbeat.manager.service.AppService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -34,6 +34,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Locale;
+
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 /**

@@ -17,12 +17,12 @@
 
 package org.dromara.hertzbeat.common.entity.alerter;
 
-import org.dromara.hertzbeat.common.util.JsonUtil;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.dromara.hertzbeat.common.util.JsonUtil;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
@@ -33,7 +33,6 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-
 import java.time.LocalDateTime;
 import java.util.Map;
 

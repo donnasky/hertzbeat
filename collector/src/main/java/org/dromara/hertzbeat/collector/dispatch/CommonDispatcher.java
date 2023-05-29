@@ -19,6 +19,9 @@ package org.dromara.hertzbeat.collector.dispatch;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.dromara.hertzbeat.collector.dispatch.timer.Timeout;
 import org.dromara.hertzbeat.collector.dispatch.timer.TimerDispatch;
 import org.dromara.hertzbeat.collector.dispatch.timer.WheelTimerTask;
@@ -29,17 +32,10 @@ import org.dromara.hertzbeat.common.entity.job.Job;
 import org.dromara.hertzbeat.common.entity.job.Metrics;
 import org.dromara.hertzbeat.common.entity.message.CollectRep;
 import org.dromara.hertzbeat.common.queue.CommonDataQueue;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.RejectedExecutionException;
-import java.util.concurrent.SynchronousQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -53,6 +49,9 @@ import java.util.concurrent.atomic.AtomicReference;
 @Component
 @Slf4j
 public class CommonDispatcher implements MetricsTaskDispatch, CollectDataDispatch {
+
+
+    // TODO: 拆分collector 2023/5/23 只能直接使用kafka队列
 
     /**
      * Metric group collection task timeout value
@@ -77,7 +76,7 @@ public class CommonDispatcher implements MetricsTaskDispatch, CollectDataDispatc
     private final TimerDispatch timerDispatch;
     /**
      * collection data exporter
-     * 采集数据导出器
+     * 采集数据导出器，需改造为访问manager处的接收地址
      */
     private final CommonDataQueue commonDataQueue;
     /**
@@ -205,6 +204,7 @@ public class CommonDispatcher implements MetricsTaskDispatch, CollectDataDispatc
         if (job.isCyclic()) {
             // If it is an asynchronous periodic cyclic task, directly send the collected data of the indicator group to the message middleware
             // 若是异步的周期性循环任务,直接发送指标组的采集数据到消息中间件
+            //需改造为访问manager处的接收地址
             commonDataQueue.sendMetricsData(metricsData);
             if (log.isDebugEnabled()) {
                 log.debug("Cyclic Job: {} - {} - {}", job.getMonitorId(), job.getApp(), metricsData.getMetrics());

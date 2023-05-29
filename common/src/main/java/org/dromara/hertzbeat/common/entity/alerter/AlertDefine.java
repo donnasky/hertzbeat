@@ -34,7 +34,6 @@ import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-
 import java.time.LocalDateTime;
 
 import static io.swagger.v3.oas.annotations.media.Schema.AccessMode.READ_ONLY;

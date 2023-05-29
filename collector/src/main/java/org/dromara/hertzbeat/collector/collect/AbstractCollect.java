@@ -17,9 +17,9 @@
 
 package org.dromara.hertzbeat.collector.collect;
 
-
 import org.dromara.hertzbeat.common.entity.job.Metrics;
 import org.dromara.hertzbeat.common.entity.message.CollectRep;
+
 
 /**
  * Specific indicator group collection implementation abstract class

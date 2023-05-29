@@ -21,22 +21,6 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import org.dromara.hertzbeat.collector.collect.AbstractCollect;
-import org.dromara.hertzbeat.collector.collect.common.http.CommonHttpClient;
-import org.dromara.hertzbeat.collector.collect.http.promethus.exporter.ExporterParser;
-import org.dromara.hertzbeat.collector.collect.http.promethus.exporter.MetricFamily;
-import org.dromara.hertzbeat.collector.dispatch.DispatchConstants;
-import org.dromara.hertzbeat.collector.util.CollectUtil;
-import org.dromara.hertzbeat.common.constants.CollectorConstants;
-import org.dromara.hertzbeat.collector.util.JsonPathParser;
-import org.dromara.hertzbeat.common.entity.job.Metrics;
-import org.dromara.hertzbeat.common.entity.job.protocol.HttpProtocol;
-import org.dromara.hertzbeat.common.entity.message.CollectRep;
-import org.dromara.hertzbeat.common.constants.CommonConstants;
-import org.dromara.hertzbeat.common.util.CommonUtil;
-import org.dromara.hertzbeat.common.util.IpDomainUtil;
-import org.dromara.hertzbeat.collector.collect.http.promethus.AbstractPrometheusParse;
-import org.dromara.hertzbeat.collector.collect.http.promethus.PrometheusParseCreater;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.net.util.Base64;
 import org.apache.http.HttpHeaders;
@@ -59,12 +43,28 @@ import org.apache.http.impl.client.BasicAuthCache;
 import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.EntityUtils;
+import org.dromara.hertzbeat.collector.collect.AbstractCollect;
+import org.dromara.hertzbeat.collector.collect.common.http.CommonHttpClient;
+import org.dromara.hertzbeat.collector.collect.http.promethus.AbstractPrometheusParse;
+import org.dromara.hertzbeat.collector.collect.http.promethus.PrometheusParseCreater;
+import org.dromara.hertzbeat.collector.collect.http.promethus.exporter.ExporterParser;
+import org.dromara.hertzbeat.collector.collect.http.promethus.exporter.MetricFamily;
+import org.dromara.hertzbeat.collector.dispatch.DispatchConstants;
+import org.dromara.hertzbeat.collector.util.CollectUtil;
+import org.dromara.hertzbeat.collector.util.JsonPathParser;
+import org.dromara.hertzbeat.common.constants.CollectorConstants;
+import org.dromara.hertzbeat.common.constants.CommonConstants;
+import org.dromara.hertzbeat.common.entity.job.Metrics;
+import org.dromara.hertzbeat.common.entity.job.protocol.HttpProtocol;
+import org.dromara.hertzbeat.common.entity.message.CollectRep;
+import org.dromara.hertzbeat.common.util.CommonUtil;
+import org.dromara.hertzbeat.common.util.IpDomainUtil;
 import org.springframework.http.HttpMethod;
+import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-
 
 import javax.net.ssl.SSLException;
 import javax.xml.parsers.DocumentBuilder;
@@ -90,6 +90,7 @@ import static org.dromara.hertzbeat.common.constants.SignConstants.RIGHT_DASH;
  * @author tomsun28
  *
  */
+@Service
 @Slf4j
 public class HttpCollectImpl extends AbstractCollect {
 

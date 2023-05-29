@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { MonitorDataTableComponent } from './monitor-data-table.component';
+import {MonitorDataTableComponent} from './monitor-data-table.component';
 
 describe('MonitorDataChartComponent', () => {
   let component: MonitorDataTableComponent;

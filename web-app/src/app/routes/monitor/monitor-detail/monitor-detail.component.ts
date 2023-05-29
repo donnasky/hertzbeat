@@ -1,16 +1,16 @@
-import { ChangeDetectorRef, Component, Inject, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { I18NService } from '@core';
-import { ALAIN_I18N_TOKEN } from '@delon/theme';
-import { NzNotificationService } from 'ng-zorro-antd/notification';
-import { throwError } from 'rxjs';
-import { finalize, switchMap } from 'rxjs/operators';
+import {ChangeDetectorRef, Component, Inject, OnDestroy, OnInit} from '@angular/core';
+import {ActivatedRoute, ParamMap} from '@angular/router';
+import {I18NService} from '@core';
+import {ALAIN_I18N_TOKEN} from '@delon/theme';
+import {NzNotificationService} from 'ng-zorro-antd/notification';
+import {throwError} from 'rxjs';
+import {finalize, switchMap} from 'rxjs/operators';
 
-import { Message } from '../../../pojo/Message';
-import { Monitor } from '../../../pojo/Monitor';
-import { Param } from '../../../pojo/Param';
-import { AppDefineService } from '../../../service/app-define.service';
-import { MonitorService } from '../../../service/monitor.service';
+import {Message} from '../../../pojo/Message';
+import {Monitor} from '../../../pojo/Monitor';
+import {Param} from '../../../pojo/Param';
+import {AppDefineService} from '../../../service/app-define.service';
+import {MonitorService} from '../../../service/monitor.service';
 
 @Component({
   selector: 'app-monitor-detail',

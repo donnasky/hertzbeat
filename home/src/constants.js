@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Translate, { translate } from '@docusaurus/Translate'
+import Translate, {translate} from '@docusaurus/Translate'
 
 export const features = [
   {

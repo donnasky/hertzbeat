@@ -17,12 +17,12 @@
 
 package org.dromara.hertzbeat.manager.component.alerter.impl;
 
-import org.dromara.hertzbeat.common.entity.alerter.Alert;
-import org.dromara.hertzbeat.common.entity.manager.NoticeReceiver;
-import org.dromara.hertzbeat.manager.support.exception.AlertNoticeException;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.dromara.hertzbeat.common.entity.alerter.Alert;
+import org.dromara.hertzbeat.common.entity.manager.NoticeReceiver;
+import org.dromara.hertzbeat.manager.support.exception.AlertNoticeException;
 import org.springframework.http.*;
 import org.springframework.stereotype.Component;
 

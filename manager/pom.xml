@@ -56,10 +56,10 @@
             <artifactId>hertzbeat-alerter</artifactId>
         </dependency>
         <!-- collector -->
-        <dependency>
+ <!--       <dependency>
             <groupId>org.dromara.hertzbeat</groupId>
             <artifactId>hertzbeat-collector</artifactId>
-        </dependency>
+        </dependency>-->
         <!-- spring -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

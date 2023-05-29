@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AlertNoticeComponent } from './alert-notice.component';
+import {AlertNoticeComponent} from './alert-notice.component';
 
 describe('AlertNoticeComponent', () => {
   let component: AlertNoticeComponent;

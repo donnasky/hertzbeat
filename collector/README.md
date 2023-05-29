@@ -1,5 +1,7 @@
 ### Collector     
 
+###  独立运行的collector模块需采用kafka消息队列
+
 Collect Metrics Data from peer-to-peer machine by common protocols.  
 使用通用协议远程采集获取对端指标数据。  
 

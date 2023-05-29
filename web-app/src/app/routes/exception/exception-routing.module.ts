@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
-import { ExceptionComponent } from './exception.component';
+import {ExceptionComponent} from './exception.component';
 
 const routes: Routes = [
   { path: '403', component: ExceptionComponent, data: { type: 403 } },

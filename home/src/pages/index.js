@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react'
+import React, {useEffect} from 'react'
 import clsx from 'clsx'
 import Layout from '@theme/Layout'
 import Link from '@docusaurus/Link'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import useBaseUrl from '@docusaurus/useBaseUrl'
-import Translate, { translate } from '@docusaurus/Translate'
+import Translate, {translate} from '@docusaurus/Translate'
 
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { EffectFade, Navigation, Autoplay } from 'swiper'
+import {Swiper, SwiperSlide} from 'swiper/react'
+import {Autoplay, EffectFade, Navigation} from 'swiper'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
@@ -18,7 +18,7 @@ import LogoCarousel from './components/LogoCarousel'
 import cdnTransfer from '../CdnTransfer'
 
 import styles from './styles.module.css'
-import {features, dromaraFriends, friendsLink, usersLink} from '../constants'
+import {dromaraFriends, features, friendsLink, usersLink} from '../constants'
 import LogoCarouselStatic from './components/LogoCarouselStatic'
 import Sponsor from "./components/Sponsor";
 import DiaLog from "./components/DiaLog";

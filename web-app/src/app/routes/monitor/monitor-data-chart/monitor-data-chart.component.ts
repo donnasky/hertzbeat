@@ -1,10 +1,10 @@
-import { Component, Inject, Input, OnInit } from '@angular/core';
-import { I18NService } from '@core';
-import { ALAIN_I18N_TOKEN } from '@delon/theme';
-import { EChartsOption } from 'echarts';
-import { finalize } from 'rxjs/operators';
+import {Component, Inject, Input, OnInit} from '@angular/core';
+import {I18NService} from '@core';
+import {ALAIN_I18N_TOKEN} from '@delon/theme';
+import {EChartsOption} from 'echarts';
+import {finalize} from 'rxjs/operators';
 
-import { MonitorService } from '../../../service/monitor.service';
+import {MonitorService} from '../../../service/monitor.service';
 
 @Component({
   selector: 'app-monitor-data-chart',

@@ -17,10 +17,10 @@
 
 package org.dromara.hertzbeat.manager.pojo.dto;
 
-import org.dromara.hertzbeat.common.entity.manager.ParamDefine;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.dromara.hertzbeat.common.entity.manager.ParamDefine;
 
 import java.util.List;
 

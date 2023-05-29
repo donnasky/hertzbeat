@@ -1,4 +1,4 @@
-import { TimezonePipe } from './timezone.pipe';
+import {TimezonePipe} from './timezone.pipe';
 
 describe('TimezonePipe', () => {
   it('create an instance', () => {

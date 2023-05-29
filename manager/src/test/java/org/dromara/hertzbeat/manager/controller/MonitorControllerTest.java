@@ -1,8 +1,8 @@
 package org.dromara.hertzbeat.manager.controller;
 
+import org.dromara.hertzbeat.common.constants.CommonConstants;
 import org.dromara.hertzbeat.common.entity.manager.Monitor;
 import org.dromara.hertzbeat.common.entity.manager.Param;
-import org.dromara.hertzbeat.common.constants.CommonConstants;
 import org.dromara.hertzbeat.common.util.JsonUtil;
 import org.dromara.hertzbeat.manager.pojo.dto.MonitorDto;
 import org.dromara.hertzbeat.manager.service.impl.MonitorServiceImpl;

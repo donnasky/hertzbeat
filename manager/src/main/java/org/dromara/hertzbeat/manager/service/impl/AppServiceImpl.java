@@ -17,22 +17,22 @@
 
 package org.dromara.hertzbeat.manager.service.impl;
 
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.FileUtils;
 import org.dromara.hertzbeat.alert.calculate.CalculateAlarm;
-import org.dromara.hertzbeat.collector.dispatch.entrance.internal.CollectJobService;
 import org.dromara.hertzbeat.common.constants.CommonConstants;
 import org.dromara.hertzbeat.common.entity.job.Configmap;
 import org.dromara.hertzbeat.common.entity.job.Job;
 import org.dromara.hertzbeat.common.entity.job.Metrics;
 import org.dromara.hertzbeat.common.entity.manager.Monitor;
 import org.dromara.hertzbeat.common.entity.manager.Param;
+import org.dromara.hertzbeat.common.entity.manager.ParamDefine;
 import org.dromara.hertzbeat.common.util.JsonUtil;
 import org.dromara.hertzbeat.manager.dao.MonitorDao;
 import org.dromara.hertzbeat.manager.dao.ParamDao;
 import org.dromara.hertzbeat.manager.pojo.dto.Hierarchy;
-import org.dromara.hertzbeat.common.entity.manager.ParamDefine;
 import org.dromara.hertzbeat.manager.service.AppService;
-import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.io.FileUtils;
+import org.dromara.hertzbeat.manager.service.CollectJobService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
@@ -276,7 +276,7 @@ public class AppServiceImpl implements AppService, CommandLineRunner {
                 List<Configmap> configmaps = params.stream().map(param -> new Configmap(param.getField(), param.getValue(), param.getType())).collect(Collectors.toList());
                 appDefine.setConfigmap(configmaps);
                 // 下发采集任务
-                long newJobId = collectJobService.addAsyncCollectJob(appDefine);
+                long newJobId = collectJobService.addAsyncCollectJob(monitor.getCollectorId(),appDefine);
                 monitor.setJobId(newJobId);
                 calculateAlarm.triggeredAlertMap.remove(String.valueOf(monitor.getId()));
                 monitorDao.save(monitor);

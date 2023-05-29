@@ -1,16 +1,23 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnDestroy, Optional } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { I18NService, StartupService } from '@core';
-import { ReuseTabService } from '@delon/abc/reuse-tab';
-import { DA_SERVICE_TOKEN, ITokenService, SocialService } from '@delon/auth';
-import { SettingsService, _HttpClient, ALAIN_I18N_TOKEN } from '@delon/theme';
-import { User } from '@delon/theme/src/services/settings/types';
-import { NzTabChangeEvent } from 'ng-zorro-antd/tabs';
-import { finalize } from 'rxjs/operators';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  Inject,
+  OnDestroy,
+  Optional
+} from '@angular/core';
+import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {StartupService} from '@core';
+import {ReuseTabService} from '@delon/abc/reuse-tab';
+import {DA_SERVICE_TOKEN, ITokenService, SocialService} from '@delon/auth';
+import {_HttpClient, SettingsService} from '@delon/theme';
+import {User} from '@delon/theme/src/services/settings/types';
+import {NzTabChangeEvent} from 'ng-zorro-antd/tabs';
+import {finalize} from 'rxjs/operators';
 
-import { Message } from '../../../pojo/Message';
-import { LocalStorageService } from '../../../service/local-storage.service';
+import {Message} from '../../../pojo/Message';
+import {LocalStorageService} from '../../../service/local-storage.service';
 
 @Component({
   selector: 'passport-login',
